@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>КАТКА — игровая у Кати</title>
+<meta name="description" content="Домашняя игровая: две PS5, два мощных ПК с ИИ-сервисами, VR, электросамокаты и гостиная для встреч. Бронь по часам онлайн.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0c0b10">
+<meta property="og:title" content="КАТКА — игровая у Кати">
+<meta property="og:description" content="PS5, ПК, VR, самокаты и место для своих. Бронь по часам.">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c0b10'/%3E%3Ccircle cx='11' cy='11' r='4.5' fill='none' stroke='%23ff4d5e' stroke-width='2.4'/%3E%3Cpath d='M21 6.5l4.5 8h-9z' fill='none' stroke='%233ddc97' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath d='M7.5 18.5l7 7m0-7l-7 7' stroke='%235b8cff' stroke-width='2.4' stroke-linecap='round'/%3E%3Crect x='17.5' y='18.5' width='7' height='7' fill='none' stroke='%23ff7ad9' stroke-width='2.2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tektur:wdth,wght@75..100,400..900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top" id="top">
+  <a class="logo" href="#" aria-label="КАТКА — на главную">
+    <span class="logo__sym" aria-hidden="true"><i class="s-o"></i><i class="s-t"></i><i class="s-x"></i><i class="s-q"></i></span>
+    КАТКА
+  </a>
+  <nav class="nav" aria-label="Разделы">
+    <a href="#zones">Зоны</a>
+    <a href="#prices">Тарифы</a>
+    <a href="#promo">Акции</a>
+    <a href="#events">Сборы</a>
+    <a href="#scooters">Самокаты</a>
+  </nav>
+  <div class="top__right">
+    <button class="btn btn--ghost" id="accountBtn" type="button">Войти</button>
+    <a class="btn btn--accent" href="#book"><span class="hide-sm">Забронировать</span><span class="show-sm">Бронь</span></a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__text">
+      <p class="eyebrow mono">игровая в частном доме · по записи</p>
+      <h1 class="hero__title">КАТКА<span>у Кати</span></h1>
+      <p class="hero__lead">Две PlayStation 5, два мощных ПК с CS2 и ИИ-сервисами, VR, электросамокаты в аренду и гостиная, где можно собраться своей компанией. Без толпы, без клуба, как у друга дома — только лучше.</p>
+      <div class="hero__cta">
+        <a class="btn btn--accent btn--lg" href="#book">Выбрать время</a>
+        <a class="btn btn--line btn--lg" href="#prices">Сколько стоит</a>
+      </div>
+      <div class="live" id="live" aria-live="polite"></div>
+    </div>
+    <figure class="hero__photo">
+      <img src="img/hero.jpg" alt="Игровая комната: диван, два телевизора с приставками, геймпады на столике" width="1600" height="900">
+      <figcaption class="sticker">2 × PS5<br>2 × ПК<br>VR · 4 самоката</figcaption>
+    </figure>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__row">
+      <span>○ первая катка −50% по коду ПЕРВАЯКАТКА</span><span>△ счастливые часы будни 10–14 −30%</span><span>✕ ночная катка 22–02</span><span>□ день рождения −20%</span><span>○ 5% кешбэк баллами</span><span>△ ИИ-подписки уже оплачены</span>
+      <span>○ первая катка −50% по коду ПЕРВАЯКАТКА</span><span>△ счастливые часы будни 10–14 −30%</span><span>✕ ночная катка 22–02</span><span>□ день рождения −20%</span><span>○ 5% кешбэк баллами</span><span>△ ИИ-подписки уже оплачены</span>
+    </div>
+  </div>
+
+  <!-- ZONES -->
+  <section class="section" id="zones">
+    <div class="section__head">
+      <p class="eyebrow mono">01 / зоны</p>
+      <h2>Что внутри</h2>
+    </div>
+    <div class="zones" id="zonesGrid"></div>
+  </section>
+
+  <!-- PRICES -->
+  <section class="section" id="prices">
+    <div class="section__head">
+      <p class="eyebrow mono">02 / тарифы</p>
+      <h2>Платишь за часы,<br>а не за вход</h2>
+      <p class="section__sub">День — будни до 17:00. Вечер — будни после 17:00 и все выходные. Работаем с 10:00 до 02:00.</p>
+    </div>
+    <div class="price-table" id="priceTable"></div>
+    <div class="packs" id="packs"></div>
+  </section>
+
+  <!-- PROMO -->
+  <section class="section" id="promo">
+    <div class="section__head">
+      <p class="eyebrow mono">03 / акции</p>
+      <h2>Скидки, которые<br>реально работают</h2>
+      <p class="section__sub">Скидки не суммируются: в брони сработает самая выгодная. Баллы можно добавить сверху.</p>
+    </div>
+    <div class="promos" id="promoGrid"></div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="section" id="events">
+    <div class="section__head section__head--row">
+      <div>
+        <p class="eyebrow mono">04 / сборы</p>
+        <h2>Сборы и турниры</h2>
+        <p class="section__sub">Приходи один — уйдёшь с командой. Или собери своих: гостиная на 12 человек с телевизором и проектором.</p>
+      </div>
+      <button class="btn btn--line" type="button" id="newEventBtn">+ Собрать свой сбор</button>
+    </div>
+    <div class="events" id="eventsList"></div>
+  </section>
+
+  <!-- SCOOTERS -->
+  <section class="section scooters" id="scooters">
+    <figure class="scooters__photo"><img src="img/scoot.jpg" alt="Электросамокаты у крыльца дома" loading="lazy" width="1200" height="1500"></figure>
+    <div class="scooters__body">
+      <p class="eyebrow mono">05 / аренда</p>
+      <h2>Самокаты<br>на час или на сутки</h2>
+      <p class="section__sub">Четыре электросамоката с запасом хода 40 км. Шлем и замок в комплекте. Берёшь по паспорту или с залогом 3 000 ₽, после поездки залог возвращаем сразу.</p>
+      <ul class="facts">
+        <li><b>300 ₽</b><span>час</span></li>
+        <li><b>1 500 ₽</b><span>сутки</span></li>
+        <li><b>08–22</b><span>выдача</span></li>
+        <li><b>25 км/ч</b><span>максимум</span></li>
+      </ul>
+      <p class="note">Катаемся только с 18 лет. Перед первой поездкой Катя за пять минут покажет, как тормозить и где парковать.</p>
+      <button class="btn btn--accent btn--lg" type="button" data-book="scoot">Взять самокат</button>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section book" id="book">
+    <div class="section__head">
+      <p class="eyebrow mono">06 / бронь</p>
+      <h2>Бронь за минуту</h2>
+      <p class="section__sub">Выбери зону, день и часы. Оплата на месте или переводом по СБП, когда придёшь. Отменить можно в кабинете бесплатно за 2 часа.</p>
+    </div>
+    <div class="book__grid">
+      <form class="book__form" id="bookForm" novalidate>
+        <fieldset class="step">
+          <legend><span class="step__n">1</span> Что</legend>
+          <div class="chips" id="resChips" role="radiogroup" aria-label="Зона"></div>
+          <div class="chips chips--sm" id="unitChips" role="radiogroup" aria-label="Место"></div>
+        </fieldset>
+        <fieldset class="step">
+          <legend><span class="step__n">2</span> Когда</legend>
+          <div class="days" id="dayChips" role="radiogroup" aria-label="День"></div>
+          <label class="switch" id="dayModeWrap" hidden><input type="checkbox" id="dayMode"> <span>На сутки — 1 500 ₽</span></label>
+          <p class="hint" id="slotHint">Нажми на час начала, потом на последний час.</p>
+          <div class="slots" id="slots"></div>
+          <div class="legend mono"><span><i class="lg lg--free"></i>свободно</span><span><i class="lg lg--busy"></i>занято</span><span><i class="lg lg--sel"></i>твой выбор</span><span><i class="lg lg--happy"></i>−30%</span></div>
+        </fieldset>
+        <fieldset class="step">
+          <legend><span class="step__n">3</span> Кто</legend>
+          <div class="row" id="guestsRow">
+            <label class="field field--small">
+              <span>Сколько вас</span>
+              <div class="stepper"><button type="button" data-g="-1" aria-label="Меньше">−</button><output id="guests">1</output><button type="button" data-g="1" aria-label="Больше">+</button></div>
+            </label>
+          </div>
+          <div class="row">
+            <label class="field"><span>Имя</span><input id="fName" autocomplete="given-name" required placeholder="Как к тебе обращаться"></label>
+            <label class="field"><span>Телефон</span><input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="+7 900 000-00-00"></label>
+          </div>
+          <div class="row">
+            <label class="field"><span>Промокод</span><input id="fPromo" autocomplete="off" placeholder="Если есть"></label>
+            <label class="field"><span>Комментарий</span><input id="fNote" placeholder="Например, нужен третий геймпад"></label>
+          </div>
+          <label class="switch" id="bonusWrap" hidden><input type="checkbox" id="fBonus"> <span id="bonusLabel"></span></label>
+        </fieldset>
+      </form>
+
+      <aside class="summary" id="summary" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="section__head">
+      <p class="eyebrow mono">07 / как это работает</p>
+      <h2>Коротко о правилах</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>Где это?</summary><p>Игровая в частном доме, поэтому точный адрес и как пройти присылаем в Telegram после брони. Есть парковка у ворот.</p></details>
+      <details><summary>Можно с едой и напитками?</summary><p>Да, приноси своё или закажи доставку. Чай, кофе и вода бесплатно. Алкоголь и курение — нет, это дом.</p></details>
+      <details><summary>Какие игры есть?</summary><p>На PS5: EA FC 26, Mortal Kombat 1, Tekken 8, It Takes Two, Gran Turismo 7, Spider-Man 2 и ещё около 30. На ПК: CS2, Dota 2, Valorant, PUBG и Steam-библиотека. В VR: Beat Saber, Superhot, Walkabout Mini Golf.</p></details>
+      <details><summary>Что за ИИ-сервисы на ПК?</summary><p>Оплаченные подписки ChatGPT, Claude, Midjourney и Suno. Садишься и работаешь: делаешь презентацию, картинки, музыку или бота. Свои аккаунты тоже можно.</p></details>
+      <details><summary>С детьми можно?</summary><p>С 12 лет — самостоятельно, младше — со взрослым. VR с 10 лет. Самокаты строго с 18.</p></details>
+      <details><summary>Как отменить?</summary><p>В личном кабинете, бесплатно, если до начала больше 2 часов. Позже — напиши Кате, разберёмся.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot__big">КАТКА</div>
+  <div class="foot__row">
+    <p>Игровая у Кати · 10:00–02:00 каждый день</p>
+    <p><a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> · <a href="#" id="adminLink">Для Кати</a></p>
+  </div>
+  <p class="foot__demo mono">демо-версия: брони, кабинет и сборы пока хранятся в этом браузере</p>
+</footer>
+
+<!-- Modals -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal__x" type="button" data-close aria-label="Закрыть">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
